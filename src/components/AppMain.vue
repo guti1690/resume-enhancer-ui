@@ -62,7 +62,9 @@ async function requestEnhanceResumeEndpoint() {
 
   try {
     isLoading.value = true
-    const result = await fetch('http://localhost:3000/resumes/enhance', {
+
+    const endpointUrl = `${import.meta.env.VITE_API_ROOT}/resumes/enhance`
+    const result = await fetch(endpointUrl, {
       method: 'POST',
       body: formData,
     })
@@ -86,7 +88,9 @@ async function downloadResume() {
 
   try {
     isLoading.value = true
-    const response = await fetch('http://localhost:3000/resumes/download', {
+
+    const endpointUrl = `${import.meta.env.VITE_API_ROOT}/resumes/download`
+    const response = await fetch(endpointUrl, {
       method: 'POST',
       body: JSON.stringify(resumeResults.value),
       headers: {
