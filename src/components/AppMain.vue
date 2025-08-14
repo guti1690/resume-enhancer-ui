@@ -157,7 +157,7 @@ onBeforeMount(() => {
           <template v-if="isLoading">
             <span class="flex items-center justify-center">
               <LoaderCircle class="mr-2 animate-spin" />
-              Enhancing resume (This might take a couple of minutes)...
+              Enhancing resume (Est. 2 min)...
             </span>
           </template>
           <template v-else>
