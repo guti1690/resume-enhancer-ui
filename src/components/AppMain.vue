@@ -20,9 +20,7 @@ import {
   CardTitle,
   CardFooter,
 } from '@/components/ui/card'
-
 import { type ResumeResults } from '@/types/resume'
-
 import { resume as mockResume } from '@/lib/mock'
 
 const DEBUG = false
@@ -48,7 +46,7 @@ function handleUpload() {
     return
   }
 
-  requestEnhanceResumeEndpoint()
+  getEnhancedResumeData()
 }
 
 const handleClear = () => {
@@ -56,7 +54,7 @@ const handleClear = () => {
   resumeResults.value = null
 }
 
-async function requestEnhanceResumeEndpoint() {
+async function getEnhancedResumeData() {
   const formData = new FormData()
   formData.append('file', file.value!)
 
